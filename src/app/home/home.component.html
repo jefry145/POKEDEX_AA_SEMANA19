@@ -1,0 +1,20 @@
+
+<div class="row text-center py-5">
+    <div class="col">
+        <h1>POKEDEX</h1>
+    </div>
+</div>
+<div class="row px-5">
+    <div class="col-4">
+        <input placeholder="Ingresa un nombre de un pokemon" class="form-control" type="text" [(ngModel)]="criterio">
+    </div>
+    <div class="col">
+        <button class="btn btn-outline-info" type="submit" [routerLink]="['detalles',criterio ]" >BUSCAR</button>
+    </div>
+</div>
+<div  class="row py-5 px-5 text-monospace">
+    <div id="cardPoke" class="card col-2" *ngFor="let elemet of data ">  
+           <img  src="{{elemet.image}}" alt="" >
+           <p class="text-center">{{elemet.name | uppercase}}</p>
+    </div>
+</div>
